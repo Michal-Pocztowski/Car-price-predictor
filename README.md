@@ -58,36 +58,52 @@ col_to_drop = [
 cars = cars.drop(columns=col_to_drop)
 ```
 The tabel below shows the percent of NaN values in rest of columns.
-![](./images/Nan_values%.png)
+
+![](./screenshots/Nan_values.png)
 
 #### Dropped columns
 Columns with too many NaN values were dropped:
+
 -cylinders
+
 -drive
+
 -size
+
 -type
 
 
 #### Dropped rows
 For attributes which seems to be important or had small amount of NaN values, rows were dropped:
+
 -manufacturer
+
 -make
+
 -condition
+
 -title_status
 #### Numeric data cleaning
 Scatter plot show that outlier values must be remove.
-![](./images/scatter_plot_before.png)
+
+![](./screenshots/scatter_plot_befor.png)
+
 The following values have been dropped.
+
 'price': values higher than 100000 and lower than 1000 
+
 'odometer': values higher than 300000 and lower than 3000
+
 'year': values lower than 1980
 
 Scatter plot after numeric data cleaning.
-![](./images/scatter_plot_after.png)
+
+![](./screenshots/scatter_plot_after.png)
 
 #### 'Manufacturer' and 'make'
 
 'Manufacturer' and 'make' were compared with data from library vehicle-makes, and incorrect were dropped. Makes which occurred more than 20 times were retained. 
+
 ### 2. Spliting data
 Spliting car data to train(80%) and test set(20%)
 ```python
@@ -284,7 +300,7 @@ Test RMSE:  3484.62
 Test R^2:  0.86
 Test MAE:  1943.76
 ```
-![](./images/car_price.png)
+![](./screenshots/car_price.png)
 
 Model of RandomForestRegressor predict satisfactory results, but it still be overfitted. To deal with it, can be used GridSearchCV with another parameters set.
 
@@ -308,6 +324,10 @@ jupyter notebook
 ![](./screenshots/jupyter1.png)
 
 ## Project usage 
+To project path add folder with data named 'data', which contain CSV file named 'car_data.csv'.
+
+Or rename parameters in first jupyter cell.
+
 #### Test best model
 To train and test my best model, click button shows bellow. 
 At the end of notebook, You will see results of model evaluation .
